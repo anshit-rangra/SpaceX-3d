@@ -20,6 +20,7 @@ const SpaceShip = () => {
                 <ambientLight intensity={0.8} />
                 <directionalLight position={[3, 5, 7]} />
                 <SpaceShuttle scale={4} />
+                <OrbitControls enableZoom={false} />
             </Canvas>
         </div>
     </section>

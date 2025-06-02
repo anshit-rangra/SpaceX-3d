@@ -2,9 +2,9 @@ import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 
-export default function SpaceShuttle(props) {
+export default function Mars(props) {
   const ref = useRef();
-  const { scene } = useGLTF('./spaceShuttle.glb');
+  const { scene } = useGLTF('./mars.glb');
 
   // Rotate the model every frame
   useFrame(() => {
