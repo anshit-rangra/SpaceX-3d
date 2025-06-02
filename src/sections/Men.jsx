@@ -36,7 +36,7 @@ const Men = () => {
   })
   
   return (
-    <section id='menOnSpace' className='mos'>
+    <section id='MenOnSpace' className='mos'>
         <div>
       <h1>We’re Going to Space</h1>
       <p>
