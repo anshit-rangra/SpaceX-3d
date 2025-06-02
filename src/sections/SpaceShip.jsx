@@ -1,9 +1,47 @@
 import { OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import React from 'react'
+import React, { useRef } from 'react'
 import SpaceShuttle from '../models/SpaceShuttle'
+  import { useGSAP } from '@gsap/react'
+  import {gsap} from "gsap"
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
 
 const SpaceShip = () => {
+
+  const canvasRef = useRef(null)
+
+  useGSAP(()=> {
+
+    gsap.from(".space-ship .left p, .space-ship .left h1", {
+      x: -300,
+      opacity: 0,
+      duration: 1.2,
+      stagger:0.5 , 
+      scrollTrigger: {
+        trigger: ".space-ship .left",
+        scroller: "body",
+        start: "top 75%",
+        end: "top 10%",
+        scrub: 4,
+      }
+    })
+
+    gsap.from(canvasRef.current, {
+      x: 300,
+      opacity: 0,
+      duration: 1.2,
+      scrollTrigger: {
+        trigger: canvasRef.current,
+        scroller: "body",
+        start: "top 75%",
+        end: "top 10%",
+        scrub: 4,
+      }
+    })
+  })
+
   return (
     <section id='shuttle' className='space-ship'>
         <div className="left">
@@ -16,7 +54,7 @@ const SpaceShip = () => {
         </div>
 
         <div className="right">
-            <Canvas camera={{position:[40,25,20], fov:100}} >
+            <Canvas ref={canvasRef} camera={{position:[40,25,20], fov:100}} >
                 <ambientLight intensity={0.8} />
                 <directionalLight position={[3, 5, 7]} />
                 <SpaceShuttle scale={4} />

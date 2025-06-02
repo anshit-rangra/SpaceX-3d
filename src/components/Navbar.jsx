@@ -1,6 +1,24 @@
+import { useGSAP } from '@gsap/react'
+import { gsap } from "gsap";
 import React from 'react'
 
 const Navbar = () => {
+  useGSAP(() => {
+    let tl = new gsap.timeline()
+    tl.from(".logo", {
+      y: 10,
+      opacity:0,
+      delay: .5,
+      duration:.8
+    })
+
+    tl.from(".btns button",{
+      x: 400,
+      opacity: 0,
+      duration:1,
+      stagger: 0.4
+    })
+  })
   return (
     <nav>
       <a href="#">

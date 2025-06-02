@@ -1,7 +1,53 @@
 import React from 'react';
 import { FaTwitter, FaInstagram, FaYoutube, FaLinkedin } from 'react-icons/fa';
+import { useGSAP } from "@gsap/react";
+import {gsap} from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
+
+  useGSAP(()=>{
+    gsap.from(".logo-text", {
+      x: -200,
+      opacity:0,
+      duration:1,
+      scrollTrigger:{
+        trigger: ".spacex-footer",
+        scroller: "body",
+        start: "top 70%",
+        end: "top top"
+      }
+    })
+
+    gsap.from(".footer-links a, .footer-social a", {
+      y: 100,
+      opacity:0,
+      duration:2,
+      stagger: 0.3,
+      ease: "elastic.out(0.5,0.3)",
+      scrollTrigger:{
+        trigger: ".spacex-footer",
+        scroller: "body",
+        start: "top 70%",
+      }
+    })
+
+    gsap.from(".footer-bottom * ", {
+      y: 100,
+      duration: 1.5,
+      opacity: 0,
+      ease: "back.out(1.7)",
+      stagger:0.2,
+      scrollTrigger:{
+        trigger: ".spacex-footer",
+        scroller: "body",
+        start: "top 70%",
+      }
+    })
+  })
+
   return (
     <footer className="spacex-footer">
       {/* Top Section */}

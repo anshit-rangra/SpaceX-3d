@@ -1,6 +1,40 @@
 import React from 'react'
+import { useGSAP } from "@gsap/react";
+import {gsap} from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Men = () => {
+
+  useGSAP(() => {
+    gsap.from(".mos h1",{
+      y: 200,
+      duration: 1,
+      opacity:0,
+      scrollTrigger: {
+        trigger: ".mos",
+        scroller: "body",
+        start: "top 80%",
+        end: "top 80%",
+        scrub:4
+      }
+    })
+
+    gsap.from(".mos p",{
+      y: 200,
+      duration: 1,
+      opacity:0,
+      scrollTrigger: {
+        trigger: ".mos h1",
+        scroller: "body",
+        start: "top 80%",
+        end: "top 50%",
+        scrub: 4
+      }
+    })
+  })
+  
   return (
     <section id='menOnSpace' className='mos'>
         <div>

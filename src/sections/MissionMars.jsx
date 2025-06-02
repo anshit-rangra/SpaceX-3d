@@ -1,13 +1,51 @@
 import { Canvas } from "@react-three/fiber";
-import React from "react";
+import React, { useRef } from "react";
 import Mars from "../models/Mars"
 import { OrbitControls } from "@react-three/drei";
+import { useGSAP } from "@gsap/react";
+import {gsap} from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const MissionMars = () => {
+
+  const canvasRef = useRef(null)
+
+  useGSAP(()=> {
+
+    gsap.from(".mars-section .right p, .mars-section .right h1", {
+      x: 300,
+      opacity: 0,
+      duration: 1.2,
+      stagger:0.5 , 
+      scrollTrigger: {
+        trigger: ".mars-section .right",
+        scroller: "body",
+        start: "top 85%",
+        end: "top 5%",
+        scrub: 4,
+      }
+    })
+
+    gsap.from(canvasRef.current, {
+      x: -300,
+      opacity: 0,
+      duration: 1.2,
+      scrollTrigger: {
+        trigger: canvasRef.current,
+        scroller: "body",
+        start: "top 85%",
+        end: "top 5%",
+        scrub: 4,
+      }
+    })
+  })
+
   return (
     <section id="mars" className="mars-section">
       <div className="left">
-      <Canvas camera={{ position: [0, 0, 5], fov: 40 }}>
+      <Canvas ref={canvasRef} camera={{ position: [0, 0, 5], fov: 40 }}>
 
         <ambientLight intensity={0.2} />
         <directionalLight position={[10, 10, 10]} />
