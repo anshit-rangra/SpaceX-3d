@@ -5,10 +5,10 @@ import SpaceShuttle from '../models/SpaceShuttle'
 
 const SpaceShip = () => {
   return (
-    <section className='space-ship'>
+    <section id='shuttle' className='space-ship'>
         <div className="left">
             <h1>Space Shuttle</h1>
-            <p>The space shuttle was a reusable spacecraft developed by NASA. It launched like a rocket, orbited Earth like a spacecraft, and landed like a plane, revolutionizing human spaceflight and satellite deployment.</p>
+            <p>The space shuttle was a reusable spacecraft developed by SpaceX. It launched like a rocket, orbited Earth like a spacecraft, and landed like a plane, revolutionizing human spaceflight and satellite deployment.</p>
 
             <p>It carried astronauts, cargo, and scientific equipment. The shuttle enabled construction of the International Space Station and repaired satellites, including the Hubble Space Telescope.</p>
 

@@ -5,7 +5,7 @@ import { OrbitControls } from "@react-three/drei";
 
 const MissionMars = () => {
   return (
-    <section className="mars-section">
+    <section id="mars" className="mars-section">
       <div className="left">
       <Canvas camera={{ position: [0, 0, 5], fov: 40 }}>
 

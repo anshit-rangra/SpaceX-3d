@@ -5,7 +5,7 @@ import { Canvas } from "@react-three/fiber";
 
 const Starlink = () => {
   return (
-    <section className="starlink-section">
+    <section id="rover" className="starlink-section">
         <h1>Mars Rover</h1>
         <p>While SpaceX hasn’t built its own Mars rover yet, it plans to collaborate with scientific and industrial partners to deploy robotic vehicles. These rovers could explore terrain, test soil, search for water, and prepare landing zones for humans. Future missions using the Starship rocket may deliver advanced rovers to assist with infrastructure setup and long-term survival on Mars, supporting Elon Musk’s colonization vision.</p>
       <Canvas camera={{ position: [10, 20, 30], fov: 70 }}>

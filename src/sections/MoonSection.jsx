@@ -5,7 +5,7 @@ import { OrbitControls } from "@react-three/drei";
 
 const MoonSection = () => {
   return (
-    <section className="moon-section">
+    <section id="moon" className="moon-section">
 
       <div className="right">
         <h1>X on Moon</h1>

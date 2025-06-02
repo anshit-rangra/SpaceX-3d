@@ -5,6 +5,8 @@ import SpaceShip from './sections/SpaceShip'
 import MissionMars from './sections/MissionMars'
 import MoonSection from './sections/MoonSection'
 import Starlink from './sections/Starlink'
+import Men from './sections/Men'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
       <MissionMars />
       <MoonSection />
       <Starlink />
+      <Men />
+      <Footer />
     </>
   )
 }

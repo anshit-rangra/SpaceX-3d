@@ -3,39 +3,54 @@ import React from 'react'
 const Navbar = () => {
   return (
     <nav>
-      <img className='logo' src="./logo.svg" alt="logo" />
+      <a href="#">
+
+      <img className='logo' src="./logo.svg" alt="SpaceX" />
+      </a>
       <div className="btns">
 
         <button>
-        <span>Home</span>
-        <div></div>
+          <a href="#">
+            <span>Home</span>
+            <div></div>
+          </a>
         </button>
 
-
         <button>
-        <span>Mission</span>
-        <div></div>
+          <a href="#shuttle">
+            <span>Shuttle</span>
+            <div></div>
+          </a>
         </button>
         
         <button>
-        <span>Research</span>
-        <div></div>
+          <a href="#mars">
+            <span>Mars</span>
+            <div></div>
+          </a>
         </button>
 
         <button>
-        <span>Rockets</span>
-        <div></div>
+          <a href="#moon">
+            <span>Moon</span>
+            <div></div>
+          </a>
         </button>
         
         <button>
-        <span>Space</span>
-        <div></div>
+          <a href="#rover">
+            <span>Rover</span>
+            <div></div>
+          </a>
         </button>
 
         <button>
-        <span>Support</span>
-        <div></div>
+          <a href="#MenOnSpace">
+            <span>Spacefarers</span>
+            <div></div>
+          </a>
         </button>
+        
       </div>
     </nav>
   )
